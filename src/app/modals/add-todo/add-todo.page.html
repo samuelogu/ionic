@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start">Add Todo</ion-title>
+    <ion-text (click)="closeModal()" color="primary" slot="end">Close</ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form action="" (submit)="addTodo()" class="ion-padding">
+    <ion-input placeholder="Enter todo" mode="ios" name="todo" [(ngModel)]="todo"></ion-input>
+    <ion-button type="submit" expand="block" color="primary">Add</ion-button>
+  </form>
+
+</ion-content>

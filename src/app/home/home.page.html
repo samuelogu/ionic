@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Todo App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- List Full Lines -->
+  <ion-list lines="full">
+    <ion-item *ngFor="let todo of todos">
+      <ion-label [ngClass]="{'done': todo.isComplete}">{{todo.title}}</ion-label>
+      <ion-checkbox [(ngModel)]="todo.isComplete" slot="end"></ion-checkbox>
+    </ion-item>
+    <div class="ion-padding text-center" *ngIf="!todos.length">No todos</div>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="openModal()">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>
